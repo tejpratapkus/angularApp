@@ -1,0 +1,10 @@
+<div class="box" [style.padding]="isActive ? stylePadding : '5px'" [class.myclass]="classEnable"><p>class-style works!</p></div>
+or
+<div class="box" [ngClass]="'classEnable'"><p>class-style works!</p></div>
+or
+<div class="box" [ngClass]="multiClass"><p>class-style works!</p></div>
+ngStyle
+<div class="box" [ngStyle]="{'background-color' : 'red',
+                                'width' : '100px', 'height' : '100px'}"><p>class-style works!</p></div>
+or
+<div class="box" [ngStyle]="multiStyle"><p>class-style works!</p></div>

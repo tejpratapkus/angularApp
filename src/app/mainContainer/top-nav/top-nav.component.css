@@ -1,0 +1,38 @@
+.topNav {
+    background-color: #14358a;
+    height: 20px;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 10px;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.brand {
+    align-items: left;
+    float: left;
+    padding: 0px 30px 0px 30px !important;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.menuList {
+    align-items: right;
+    display: flex;
+    list-style-type: none;
+    float: right;
+    margin: 0px !important;
+    padding: 0px 30px 0px 0px !important;
+}
+
+.menuList li {
+    padding: 0px 10px;
+    margin-top: 0px !important;
+}
+
+.menuList li a {
+    padding: 0px 3px;
+    margin-top: 0px !important;
+    color: #ffffff;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+}

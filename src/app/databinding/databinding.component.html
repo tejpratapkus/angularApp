@@ -1,0 +1,25 @@
+<p>databinding works! {{loginUser}}</p>
+
+<h5>{{demoMethod()}}</h5>
+
+<h5>{{5*7}}</h5>
+
+<h5>{{'welcome ' + loginUser}}</h5>
+
+<h5>My current status is : {{loginStatus ? "online" : "offline"}}</h5>
+
+<h5>My current status is : {{loginStatus ? status1 : status2}}</h5>
+
+<input type="text" name="name" value="{{loginUser}}"/>
+or
+<input type="text" name="name" [value]="loginUser"/>
+or
+<input type="text" name="name" bind-value="loginUser"/>
+disabled
+<input type="text" disabled="enable" name="name" bind-value="loginUser"/> <!-- Not working-->
+or
+<input type="text" [disabled]="enable" name="name" bind-value="loginUser"/> <!--  working-->
+hidden
+<input type="text" hidden="enable" name="name" bind-value="loginUser"/> <!-- Not working-->
+or
+<input type="text" [hidden]="enable" name="name" bind-value="loginUser"/> <!--  working-->
