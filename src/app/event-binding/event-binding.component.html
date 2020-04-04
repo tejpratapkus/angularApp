@@ -1,1 +1,21 @@
 <p>event-binding works!</p>
+<button (click)="onAddCart()">Add to Cart</button>
+<br><br>
+<p>{{msg}}</p>
+<br><br>
+<input type="text" value="xyz" (click)="getInputValue($event)"/>
+<br><br>
+<button value="Laptop" (click)="addInCart($event)">Laptop</button>
+<button value="Mobile" (click)="addInCart($event)">Mobile</button>
+<button value="TV" (click)="addInCart($event)">TV</button>
+<button value="Charger" (click)="addInCart($event)">Charger</button>
+<button value="Camera" (click)="addInCart($event)">Camera</button>
+<br><br>
+<p>{{msgCart}}</p>
+<br><br>
+Template referance variable
+<br><br>
+<input type="text" #inputInfo value="xyz" name="name" (click)="getInputValue($event)"/>
+<br><br>
+<button (click)="inputInformation(inputInfo)">Get Info</button>
+<br><br>

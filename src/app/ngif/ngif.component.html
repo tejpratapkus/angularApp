@@ -1,0 +1,11 @@
+<p>ngif works!</p>
+
+<button (click)="pobulateDiv()">Submit</button>
+<br><br>
+<div class="box" *ngIf="isValid; then ifblock else elseblock"></div>
+<ng-template #ifblock>
+    <div class="box">This is the populated by click function</div>  
+</ng-template>
+<ng-template #elseblock>
+    <div class="box">No containt is their</div>  
+</ng-template>

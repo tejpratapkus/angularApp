@@ -1,0 +1,51 @@
+<p>ng-for works!</p>
+<div class="container">
+    <div class="col-md-8">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Product Name</th>
+                    <th>Product Image</th>
+                    <th>Product Price</th>
+                    <th>Product Description</th>
+                </tr>
+            </thead>
+            <tbody>
+            <!-- <tr *ngFor="let product of productList">
+            <tr *ngFor="let product of productList; index as i">
+            <tr *ngFor="let product of productList; odd as i">
+            <tr *ngFor="let product of productList; even as i">
+            <tr *ngFor="let product of productList; first as i">-->
+            <tr *ngFor="let product of productList; last as i">
+                    {{i}}
+                    <td>{{product.productName}}</td>
+                    <td>{{product.productImage}}</td>
+                    <td>{{product.productPrice}}</td>
+                    <td>{{product.productDesc}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <input type="text" class="form-control" #userName name="username" value="Tej" id="">
+    <button class="btn btn-success" (click)="createUser(userName)">Create</button>
+    <button class="btn btn-danger" (click)="deleteUser(userName)">Delete</button>
+<br><br>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>User Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users; index as i">
+                <td>{{user.name}}</td>
+                <td><button class="btn btn-danger" (click)="removeUser(i)">Remove</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>  
