@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DesignUtilServiceService } from '../appServices/design-util-service.service';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,12 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   statusOnline:boolean = true;
-  constructor() { }
+  userName:String = "Tej";
+  constructor(private _utilService:DesignUtilServiceService) { 
+    this._utilService.userName.subscribe(uname => {
+      this.userName = uname;
+    })
+  }
 
   ngOnInit(): void {
   }

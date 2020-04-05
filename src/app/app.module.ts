@@ -34,7 +34,11 @@ import { ChildComponent } from './parent/child/child.component';
 import { Cart1Component } from './profile/cart1/cart1.component';
 import { Cart2Component } from './profile/cart2/cart2.component';
 import {DesignUtilServiceService} from './appServices/design-util-service.service';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { Comp1Component } from './home/comp1/comp1.component';
+import { Comp2Component } from './home/comp2/comp2.component';
+import { Comp3Component } from './home/comp3/comp3.component';
+import { Comp4Component } from './home/comp4/comp4.component'
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -87,7 +91,11 @@ const appRoutes: Routes = [
     ParentComponent,
     ChildComponent,
     Cart1Component,
-    Cart2Component
+    Cart2Component,
+    Comp1Component,
+    Comp2Component,
+    Comp3Component,
+    Comp4Component
   ],
   imports: [
     BrowserModule,
