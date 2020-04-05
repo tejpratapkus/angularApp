@@ -1,7 +1,7 @@
 <div class="card" style="width: 100%;">
     <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-        <h5 class="card-title">Card title</h5>
+    <div class="card-body" *ngFor="let pro of product">
+        <h5 class="card-title">{{pro.name}}</h5>
         <p class="card-text">Some quick example text to build on the card.</p>
         <button (click)="btnClick()" class="btn btn-primary">Go somewhere</button>
     </div>

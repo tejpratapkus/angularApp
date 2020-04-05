@@ -33,7 +33,8 @@ import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './parent/child/child.component';
 import { Cart1Component } from './profile/cart1/cart1.component';
 import { Cart2Component } from './profile/cart2/cart2.component';
-import {DesignUtilServiceService} from './appServices/design-util-service.service'
+import {DesignUtilServiceService} from './appServices/design-util-service.service';
+import {HttpClientModule} from '@angular/common/http'
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -95,7 +96,8 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     BsDatepickerModule.forRoot(),
     CollapseModule.forRoot(),
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule
   ],
   providers: [DesignUtilServiceService],
   bootstrap: [AppComponent]

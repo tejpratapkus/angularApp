@@ -9,9 +9,12 @@ import { DesignUtilServiceService } from 'src/app/appServices/design-util-servic
 })
 export class Cart2Component implements OnInit {
 
+  product = {};
   constructor(private _msgService:DesignUtilServiceService) { }
 
   ngOnInit(): void {
+   // this.product = this._msgService.product
+   this._msgService.product().subscribe(productData => this.product = productData)
   }
 
  /* btnClick() {

@@ -7,20 +7,21 @@ import { DesignUtilServiceService } from 'src/app/appServices/design-util-servic
   templateUrl: './cart1.component.html',
   styleUrls: ['./cart1.component.css']
 })
-export class Cart1Component implements OnInit {
+export class Cart1Component implements OnInit {product = {};
+constructor(private _msgService:DesignUtilServiceService) { }
 
-  constructor(private _msgService:DesignUtilServiceService) { }
+ngOnInit(): void {
+ // this.product = this._msgService.product
+ this._msgService.product().subscribe(productData => this.product = productData)
+}
 
-  ngOnInit(): void {
-  }
+/* btnClick() {
+  const msgService = new MessageService();
+  msgService.messageAlert();
+} */
 
- /* btnClick() {
-    const msgService = new MessageService();
-    msgService.messageAlert();
-  } */
-
-  btnClick() {
-    this._msgService.messageAlert();
-  }
+btnClick() {
+  this._msgService.messageAlert();
+}
 
 }
