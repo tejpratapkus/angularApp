@@ -9,7 +9,8 @@ import { DesignUtilServiceService } from '../appServices/design-util-service.ser
 export class HomeComponent implements OnInit {
 
   statusOnline:boolean = true;
-  userName:String = "Tej";
+  //userName:String = "Tej";
+  userName;
   constructor(private _utilService:DesignUtilServiceService) { 
     this._utilService.userName.subscribe(uname => {
       this.userName = uname;

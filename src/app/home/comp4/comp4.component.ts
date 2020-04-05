@@ -8,7 +8,8 @@ import { DesignUtilServiceService } from 'src/app/appServices/design-util-servic
 })
 export class Comp4Component implements OnInit {
 
-  userName:String = "Tej";
+  //userName:String = "Tej";
+  userName;
   constructor(private _utilService:DesignUtilServiceService) { 
     this._utilService.userName.subscribe(uname => {
       this.userName = uname;
