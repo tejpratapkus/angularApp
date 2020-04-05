@@ -1,0 +1,11 @@
+<p>home works!</p>
+
+<div class="container">
+    <div class="row">
+        <ng-container *ngIf="statusOnline">
+            <div class="col-md-8" *ngFor="let productItem of products">
+                {{productItem.name}}
+            </div>
+        </ng-container>
+    </div>
+</div>

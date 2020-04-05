@@ -1,6 +1,7 @@
 <div class="mainContainer">
-  <app-mainContainer></app-mainContainer>
+
   <!-- 
+  <app-mainContainer></app-mainContainer>
   <app-databinding></app-databinding>
   <app-class-style> </app-class-style> 
   <app-event-binding></app-event-binding>
@@ -8,8 +9,22 @@
   <app-ngx-my-bootstrap></app-ngx-my-bootstrap>
   <app-ngif></app-ngif>
   <app-ng-switch></app-ng-switch>
+  <app-ng-for></app-ng-for>
   -->
 
-  <app-ng-for></app-ng-for>
+  <header>
+    <nav>
+      <ul class="nav nav-tabs">
+        <li class="nav-item"><a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+            routerLink="/">Home</a></li>
+        <li class="nav-item"><a class="nav-link" routerLinkActive="active" routerLink="blog">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" routerLinkActive="active" routerLink="profile">Profile</a></li>
+        <li class="nav-item"><a class="nav-link" routerLinkActive="active" routerLink="product">Product</a></li>
+        <li class="nav-item"><a class="nav-link" routerLinkActive="active" routerLink="carrier">Carrier</a></li>
+        <li class="nav-item"><a class="nav-link" routerLinkActive="active" routerLink="parent">Parent</a></li>
+      </ul>
+    </nav>
+  </header>
+  <router-outlet></router-outlet>
 
 </div>

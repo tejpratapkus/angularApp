@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 alert alert-light border py-4 d-flex" *ngIf="addedProduct">
+            <strong class="text-success">{{addedProduct}}</strong>&nbsp;is added in cart.
+            <button class="btn ml-auto">Checkout</button>
+        </div>
+        <div class="col-md-6">
+            <div class="card" style="width: 100%;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Laptop</h5>
+                    <p class="card-text">Some quick example text to build on the card.</p>
+                    <button (click)="onSelectProduct('Laptop')" class="btn btn-success">Know More</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card" style="width: 100%;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Mobile</h5>
+                    <p class="card-text">Some quick example text to build on the card.</p>
+                    <button (click)="onSelectProduct('Mobile')" class="btn btn-success">Know More</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card" style="width: 100%;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">TV</h5>
+                    <p class="card-text">Some quick example text to build on the card.</p>
+                    <button (click)="onSelectProduct('TV')" class="btn btn-success">Know More</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card" style="width: 100%;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Camera</h5>
+                    <p class="card-text">Some quick example text to build on the card.</p>
+                    <button (click)="onSelectProduct('Camera')" class="btn btn-success">Know More</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-child [productSelected]="proSelected" [productNameValue]="proNameValue"
+        (addedProduct)="onAddedProduct($event)"></app-child>
+</div>
