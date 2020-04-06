@@ -38,7 +38,8 @@ import {HttpClientModule} from '@angular/common/http';
 import { Comp1Component } from './home/comp1/comp1.component';
 import { Comp2Component } from './home/comp2/comp2.component';
 import { Comp3Component } from './home/comp3/comp3.component';
-import { Comp4Component } from './home/comp4/comp4.component'
+import { Comp4Component } from './home/comp4/comp4.component';
+import { LoginCompComponent } from './login/login-comp/login-comp.component'
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -95,7 +96,8 @@ const appRoutes: Routes = [
     Comp1Component,
     Comp2Component,
     Comp3Component,
-    Comp4Component
+    Comp4Component,
+    LoginCompComponent
   ],
   imports: [
     BrowserModule,
