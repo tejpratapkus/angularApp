@@ -14,11 +14,13 @@ export class TestDirectiveDirective {
   }
 
   @HostListener('click') myClick() {
-    alert('clicked');
+    //alert('clicked');
+    this.renderer.setStyle(this.el.nativeElement, 'backgroundColor', 'yellow');
   }
 
   @HostListener('mouseover') myMouseOver() {
-    alert('mouseOver');
+   // alert('mouseOver');
+    this.renderer.setStyle(this.el.nativeElement, 'backgroundColor', 'white');
   }
 
 }
