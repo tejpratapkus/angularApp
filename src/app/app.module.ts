@@ -42,7 +42,8 @@ import { Comp4Component } from './home/comp4/comp4.component';
 import { LoginCompComponent } from './login/login-comp/login-comp.component';
 import { TestDirectiveDirective } from './appDirectives/test-directive.directive';
 import { UxPipesPipe } from './appPipes/ux-pipes.pipe';
-import { FilterPipesPipe } from './appPipes/filter-pipes.pipe'
+import { FilterPipesPipe } from './appPipes/filter-pipes.pipe';
+import { TempletFormComponent } from './templet-form/templet-form.component'
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -67,6 +68,7 @@ const appRoutes: Routes = [
       { path: 'camera', component: LaptopComponent }
     ]
   },
+  { path: 'tempForm', component: TempletFormComponent },
   { path: '**', component: PageNotFoundComponent },
 ]
 
@@ -103,7 +105,8 @@ const appRoutes: Routes = [
     LoginCompComponent,
     TestDirectiveDirective,
     UxPipesPipe,
-    FilterPipesPipe
+    FilterPipesPipe,
+    TempletFormComponent
   ],
   imports: [
     BrowserModule,
