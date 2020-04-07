@@ -63,6 +63,15 @@ export class LoginComponent implements OnInit, AfterViewInit {
     this.child.submitValue();
   }
 
+  addUser(user) {
+    this.usersArr.push({
+      "id": 11,
+      "name": user.value,
+      "username": user.value.toLowerCase(),
+      "email": user.value.toLowerCase()+"@gmail.biz"
+    });
+  }
+
   usersArr = [
     {
       "id": 1,
