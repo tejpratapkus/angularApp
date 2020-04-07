@@ -1,18 +1,20 @@
 <!--<form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm"> -->
 <form (ngSubmit)="onSubmit()" #myForm="ngForm">
     <div ngModelGroup="userDetails" #userDetails="ngModelGroup">
-    <div class="form-group col-md-6">
-        <label for="exampleInputEmail1">UserName*</label>
-        <input type="text" class="form-control" id="username" name="username" 
-        placeholder="Enter Username" [(ngModel)]="username" required>
-        <small *ngIf="username">your user name is {{username}}</small>
+        <div class="form-group col-md-6">
+            <label for="exampleInputEmail1">UserName*</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username"
+                [(ngModel)]="username" required>
+            <small *ngIf="username">your user name is {{username}}</small>
+            <button class="btn-sm btn-success" (click)="setUserName()">Set Username</button>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="exampleInputPassword1">Email*</label>
+            <input type="email" class="form-control" id="email" #email="ngModel" name="email" placeholder="Enter email"
+                ngModel required email>
+            <small *ngIf="!email.valid && email.touched" class="text-danger">Please enter valid email.</small>
+        </div>
     </div>
-    <div class="form-group col-md-6">
-        <label for="exampleInputPassword1">Email*</label>
-        <input type="email" class="form-control" id="email" #email="ngModel" name="email" placeholder="Enter email" ngModel required email>
-        <small *ngIf="!email.valid && email.touched" class="text-danger">Please enter valid email.</small>
-    </div>
-</div>
     <div class="form-group col-md-6">
         <label for="course">Select Course</label>
         <select class="form-control" id="course" name="course" [ngModel]="defaultCourse">
@@ -22,5 +24,19 @@
             <option value="jQuery">jQuery</option>
         </select>
     </div>
+    <div class="form-group">
+        <div class="custom-control custom-radio" *ngFor="let gender of genders">
+            <input type="radio" id="{{gender.id}}" name="gender" value="{{gender.value}}"
+             class="custom-control-input" [ngModel]="defaultGender">
+            <label class="custom-control-label" for="customRadio1">{{gender.value}}</label>
+        </div>
+    </div>
     <button type="submit" class="btn btn-primary" [disabled]="!myForm.valid">Submit</button>
 </form>
+
+<div class="col-md-6" *ngIf="submitted"> 
+    <p>UserName: &nbsp;<strong>{{formData.username}}</strong></p>
+    <p>Email: &nbsp;<strong>{{formData.email}}</strong></p>
+    <p>Course: &nbsp;<strong>{{formData.course}}</strong></p>
+    <p>Gender: &nbsp;<strong>{{formData.gender}}</strong></p>
+</div>

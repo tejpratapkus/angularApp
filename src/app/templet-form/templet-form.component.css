@@ -1,5 +1,5 @@
 input.ng-invalid.ng-touched,
-select.ng-invalid.g-touched {
+select.ng-invalid.g-touched  {
     border: 1px solid red;
     box-shadow: 0 0 13 px inset rgba(255, 0, 0, 0.9);
 }
