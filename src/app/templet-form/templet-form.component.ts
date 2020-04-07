@@ -9,6 +9,8 @@ import { NgForm } from '@angular/forms';
 export class TempletFormComponent implements OnInit {
 
   @ViewChild('myForm') myForm:NgForm;
+  defaultCourse = 'Angular';
+  username = '';
   constructor() { }
 
   ngOnInit(): void {
