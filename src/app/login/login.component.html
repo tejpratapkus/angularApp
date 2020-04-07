@@ -12,4 +12,32 @@
             <p #childCont>This is child content</p>
         </app-login-comp>
     </div>
+
+    <div class="col-md-8">
+        <input type="text" placeholder="Search" [(ngModel)]="searchInput">
+    </div>
+    <div class="col-md-8">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">S.No</th>
+                <th scope="col">Name</th>
+                <th scope="col">UserName</th>
+                <th scope="col">email</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of usersArr | filterPipes:searchInput">
+                <th>{{user.id}}</th>
+                <td>{{user.name}}</td>
+                <td>{{user.username}}</td>
+                <td>{{user.email}}</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+
 </div>
+
+
+

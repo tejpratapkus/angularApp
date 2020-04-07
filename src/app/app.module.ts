@@ -41,7 +41,8 @@ import { Comp3Component } from './home/comp3/comp3.component';
 import { Comp4Component } from './home/comp4/comp4.component';
 import { LoginCompComponent } from './login/login-comp/login-comp.component';
 import { TestDirectiveDirective } from './appDirectives/test-directive.directive';
-import { UxPipesPipe } from './appPipes/ux-pipes.pipe'
+import { UxPipesPipe } from './appPipes/ux-pipes.pipe';
+import { FilterPipesPipe } from './appPipes/filter-pipes.pipe'
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -101,7 +102,8 @@ const appRoutes: Routes = [
     Comp4Component,
     LoginCompComponent,
     TestDirectiveDirective,
-    UxPipesPipe
+    UxPipesPipe,
+    FilterPipesPipe
   ],
   imports: [
     BrowserModule,
