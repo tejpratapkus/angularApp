@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy, ElementRef, ContentChild, Renderer2 } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy, ElementRef, ContentChild, Renderer2, ViewChild } from '@angular/core';
+import { TestDirectiveDirective } from 'src/app/appDirectives/test-directive.directive';
 
 @Component({
   selector: 'app-login-comp',
@@ -13,6 +14,7 @@ export class LoginCompComponent implements OnInit, AfterContentInit {
 
   inputValue = "Tej";
   @ContentChild('childCont') contentParagraph:ElementRef;
+  @ViewChild(TestDirectiveDirective) myDir:TestDirectiveDirective;
   constructor(private renderer:Renderer2) {
     
   }
@@ -30,6 +32,10 @@ export class LoginCompComponent implements OnInit, AfterContentInit {
     alert(this.inputValue);
     var text = this.renderer.createText("new text append at the time of submit");
     this.renderer.appendChild(this.contentParagraph.nativeElement, text);
+  }
+
+  ChangeColor(color) {
+      this.myDir.changeBg(color);
   }
 
   /* @Input() inputValue = "Tej";

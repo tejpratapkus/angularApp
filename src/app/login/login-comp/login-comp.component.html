@@ -1,7 +1,10 @@
-<div class="col-md-12">
+<div class="col-md-12" appTestDirective>
     Input Value : <strong>{{inputValue}}</strong>
     <br>
     <input type="text" placeholder="Input here.." name="" id="" #val>
-    <button (click)="submitValue(val)">Submit Value</button>
+    <!--<button (click)="submitValue(val)">Submit Value</button> -->
+    <button (click)="submitValue()">Submit Value</button>
+    <button (click)="ChangeColor('red')">Red</button>
+    <button (click)="ChangeColor('green')">Green</button>
     <ng-content></ng-content>
 </div>
