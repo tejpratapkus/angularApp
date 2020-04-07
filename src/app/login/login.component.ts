@@ -1,5 +1,6 @@
-import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, Renderer2 } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, Renderer2, HostListener } from '@angular/core';
 import { LoginCompComponent } from './login-comp/login-comp.component';
+declare var $: any;
 
 @Component({
   selector: 'app-login',
@@ -26,6 +27,20 @@ export class LoginComponent implements OnInit, AfterViewInit {
   constructor(private renderer:Renderer2) { }
 
   ngOnInit(): void {
+    //var num = 1;
+    $(window).scroll(function() {
+     // num = num + 1;
+      //console.log(num);
+      console.log('scrollinng');
+    });
+  }
+
+  @HostListener('click') myClick() {
+    alert('clicked');
+  }
+
+  @HostListener('window:scroll', ['$event']) myScroll() {
+    alert('scroll');
   }
 
   ngAfterViewInit() {

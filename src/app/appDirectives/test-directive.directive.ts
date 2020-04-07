@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Renderer2 } from '@angular/core';
+import { Directive, ElementRef, Renderer2, HostListener } from '@angular/core';
 
 @Directive({
   selector: '[appTestDirective]'
@@ -11,6 +11,14 @@ export class TestDirectiveDirective {
 
   changeBg(color:String) {
     this.renderer.setStyle(this.el.nativeElement, 'backgroundColor', color);
+  }
+
+  @HostListener('click') myClick() {
+    alert('clicked');
+  }
+
+  @HostListener('mouseover') myMouseOver() {
+    alert('mouseOver');
   }
 
 }
