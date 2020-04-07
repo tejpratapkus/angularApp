@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, Renderer2 } from '@angular/core';
 import { LoginCompComponent } from './login-comp/login-comp.component';
 
 @Component({
@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
   @ViewChild('box') box: ElementRef;
   @ViewChild(LoginCompComponent) child: LoginCompComponent;
 
-  constructor() { }
+  constructor(private renderer:Renderer2) { }
 
   ngOnInit(): void {
   }
@@ -32,7 +32,11 @@ export class LoginComponent implements OnInit, AfterViewInit {
     //console.log(this.box);
     //this.box.nativeElement.style.backgroundColor = "blue";
     // this.box.nativeElement.innerHTML = "blue";
-    console.log(this.child);
+   // console.log(this.child);
+
+   this.renderer.setStyle(this.box.nativeElement, 'backgroundColor', 'red');
+   this.renderer.setStyle(this.box.nativeElement, 'color', 'white');
+
   }
 
   changeChildProperty() {

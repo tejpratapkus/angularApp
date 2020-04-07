@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy, ElementRef, ContentChild, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-login-comp',
@@ -9,10 +9,11 @@ import { Component, OnInit, Input, OnChanges, SimpleChanges, DoCheck, AfterConte
 /*export class LoginCompComponent implements OnInit, OnChanges, DoCheck, AfterContentInit, 
 AfterContentChecked, AfterViewInit, AfterViewChecked,OnDestroy {*/
 
-export class LoginCompComponent implements OnInit {
+export class LoginCompComponent implements OnInit, AfterContentInit {
 
   inputValue = "Tej";
-  constructor() {
+  @ContentChild('childCont') contentParagraph:ElementRef;
+  constructor(private renderer:Renderer2) {
     
   }
 
@@ -20,8 +21,15 @@ export class LoginCompComponent implements OnInit {
     
   }
 
+  ngAfterContentInit() {
+    console.log(this.contentParagraph);
+    this.renderer.setStyle(this.contentParagraph.nativeElement, 'color', 'green');
+  }
+
   submitValue() {
     alert(this.inputValue);
+    var text = this.renderer.createText("new text append at the time of submit");
+    this.renderer.appendChild(this.contentParagraph.nativeElement, text);
   }
 
   /* @Input() inputValue = "Tej";
