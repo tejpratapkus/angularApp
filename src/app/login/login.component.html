@@ -1,6 +1,13 @@
 <div class="container">
-    <h2>Login</h2>
-    <input type="text" placeholder="Input here.." name="" id="" #val>
+    <div #box>
+        <h2>Login UserName : &nbsp;<strong>{{userName}}</strong></h2>
+    </div>
+    <button (click)="changeChildProperty()">Change Child Property</button>
+    <button (click)="callChildMethod()">Call Child Method</button>
+   <!-- <input type="text" placeholder="Input here.." name="" id="" #val>
     <button (click)="submitValue(val)">Submit Value</button>
-    <app-login-comp [inputValue]="value"></app-login-comp>
+    <app-login-comp [inputValue]="value"></app-login-comp>-->
+    <div class="col-md-12">
+        <app-login-comp></app-login-comp>
+    </div>
 </div>

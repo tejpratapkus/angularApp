@@ -5,45 +5,61 @@ import { Component, OnInit, Input, OnChanges, SimpleChanges, DoCheck, AfterConte
   templateUrl: './login-comp.component.html',
   styleUrls: ['./login-comp.component.css']
 })
-export class LoginCompComponent implements OnInit, OnChanges, DoCheck, AfterContentInit, 
-AfterContentChecked, AfterViewInit, AfterViewChecked,OnDestroy {
 
-  @Input() inputValue = "Tej";
+/*export class LoginCompComponent implements OnInit, OnChanges, DoCheck, AfterContentInit, 
+AfterContentChecked, AfterViewInit, AfterViewChecked,OnDestroy {*/
+
+export class LoginCompComponent implements OnInit {
+
+  inputValue = "Tej";
   constructor() {
-    console.log("constructor");
+    
   }
 
   ngOnInit(): void {
-    console.log("ngOnInit");
+    
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    //console.log("ngOnChanges");
-    console.log(changes);
+  submitValue() {
+    alert(this.inputValue);
   }
 
-  ngDoCheck() {
-    console.log("ngDoCheck");
-  }
-
-  ngAfterContentInit() {
-    console.log("ngAfterContentInit");
-  }
-
-  ngAfterContentChecked() {
-    console.log("ngAfterContentChecked");
-  }
-
-  ngAfterViewChecked() {
-    console.log("ngAfterViewChecked");
-  }
-
-  ngAfterViewInit() {
-    console.log("ngAfterViewInit");
-  }
-
-  ngOnDestroy() {
-    console.log("ngOnDestroy");
-  }
+  /* @Input() inputValue = "Tej";
+   constructor() {
+     console.log("constructor");
+   }
+ 
+   ngOnInit(): void {
+     console.log("ngOnInit");
+   }
+ 
+   ngOnChanges(changes: SimpleChanges): void {
+     //console.log("ngOnChanges");
+     console.log(changes);
+   }
+ 
+   ngDoCheck() {
+     console.log("ngDoCheck");
+   }
+ 
+   ngAfterContentInit() {
+     console.log("ngAfterContentInit");
+   }
+ 
+   ngAfterContentChecked() {
+     console.log("ngAfterContentChecked");
+   }
+ 
+   ngAfterViewChecked() {
+     console.log("ngAfterViewChecked");
+   }
+ 
+   ngAfterViewInit() {
+     console.log("ngAfterViewInit");
+   }
+ 
+   ngOnDestroy() {
+     console.log("ngOnDestroy");
+   }*/
 
 }
