@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -43,7 +43,8 @@ import { LoginCompComponent } from './login/login-comp/login-comp.component';
 import { TestDirectiveDirective } from './appDirectives/test-directive.directive';
 import { UxPipesPipe } from './appPipes/ux-pipes.pipe';
 import { FilterPipesPipe } from './appPipes/filter-pipes.pipe';
-import { TempletFormComponent } from './templet-form/templet-form.component'
+import { TempletFormComponent } from './templet-form/templet-form.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component'
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -69,6 +70,7 @@ const appRoutes: Routes = [
     ]
   },
   { path: 'tempForm', component: TempletFormComponent },
+  { path: 'reactiveForm', component: ReactiveFormComponent },
   { path: '**', component: PageNotFoundComponent },
 ]
 
@@ -106,12 +108,14 @@ const appRoutes: Routes = [
     TestDirectiveDirective,
     UxPipesPipe,
     FilterPipesPipe,
-    TempletFormComponent
+    TempletFormComponent,
+    ReactiveFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     BsDatepickerModule.forRoot(),
     CollapseModule.forRoot(),
