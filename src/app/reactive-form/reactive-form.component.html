@@ -30,7 +30,15 @@
             <label class="custom-control-label" for="customRadio1">{{gender.value}}</label>
         </div>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <div class="form-group col-md-6" formArrayName="skills">
+        <label for="addSkill">Add Skills</label>
+        <ng-container *ngFor="let skill of myReactiveForm.get('skills').controls; index as i">
+        <input type="text" class="form-control mt-2"  name="addskill" placeholder="Add Skills" formControlName="{{i}}">
+    </ng-container>
+    </div>
+    <button type="submit" class="btn btn-sm btn-light mb-4 ml-3" (click)="onAddSkills()">+ Add Skills</button>
+    <br>
+    <button type="submit" class="btn btn-primary ml-3">Submit</button>
 </form>
 
 <!-- <div class="col-md-6" *ngIf="submitted"> 
