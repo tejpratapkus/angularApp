@@ -9,12 +9,13 @@ import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 export class ReactiveFormComponent implements OnInit {
 
   myReactiveForm: FormGroup;
+  notAllowedUserName = ['Tej', 'Pratap'];
   constructor() { }
 
   ngOnInit(): void {
     this.myReactiveForm = new FormGroup({
       'userDetails': new FormGroup({
-        'username': new FormControl(null, Validators.required),
+        'username': new FormControl(null, [Validators.required, this.nanNames.bind(this)]),
         'email': new FormControl(null, [Validators.required, Validators.email]),
       }),
       'course': new FormControl('Angular'),
@@ -35,5 +36,15 @@ export class ReactiveFormComponent implements OnInit {
     { id: 1, value: 'Male' },
     { id: 1, value: 'Female' }
   ]
+
+  nanNames(control: FormControl) {
+
+    if (this.notAllowedUserName.indexOf(control.value) !== -1) {
+      return { 'nameIsNotAllowed': true };
+    } else {
+      return null;
+    }
+
+  }
 
 }

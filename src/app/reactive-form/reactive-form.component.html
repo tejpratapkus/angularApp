@@ -4,6 +4,15 @@
             <label for="exampleInputEmail1">UserName*</label>
             <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username"
                 formControlName="username">
+
+            <small class="text-danger"
+                *ngIf="!myReactiveForm.get('userDetails.username').valid && myReactiveForm.get('userDetails.username').touched">
+                <span *ngIf="myReactiveForm.get('userDetails.username').errors['required']">Please enter
+                    UserName.</span>
+                <span *ngIf="myReactiveForm.get('userDetails.username').errors['nameIsNotAllowed']">{{myReactiveForm.get('userDetails.username').value}} is already
+                    exists.</span>
+            </small>
+
         </div>
         <div class="form-group col-md-6">
             <label for="exampleInputPassword1">Email*</label>
@@ -33,8 +42,9 @@
     <div class="form-group col-md-6" formArrayName="skills">
         <label for="addSkill">Add Skills</label>
         <ng-container *ngFor="let skill of myReactiveForm.get('skills').controls; index as i">
-        <input type="text" class="form-control mt-2"  name="addskill" placeholder="Add Skills" formControlName="{{i}}">
-    </ng-container>
+            <input type="text" class="form-control mt-2" name="addskill" placeholder="Add Skills"
+                formControlName="{{i}}">
+        </ng-container>
     </div>
     <button type="submit" class="btn btn-sm btn-light mb-4 ml-3" (click)="onAddSkills()">+ Add Skills</button>
     <br>
