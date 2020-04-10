@@ -12,6 +12,7 @@ import { LaptopComponent } from './product/laptop/laptop.component';
 import { ParentComponent } from './parent/parent.component';
 import { TempletFormComponent } from './templet-form/templet-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component'
+import { CustomPreloadingService } from './appServices/custom-preloading.service';
 
 
 const appRoutes: Routes = [
@@ -21,7 +22,7 @@ const appRoutes: Routes = [
   { path: 'blog', component: BlogComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'carrier', component: CarrierComponent },
-  // { path: 'product', loadChildren: './product/product.module#ProductModule'}, after creation of product module you can configure with Lazy Loading
+  // { path: 'product', data:{loadModule: true} loadChildren: './product/product.module#ProductModule'}, after creation of product module you can configure with Lazy Loading
   {
     path: 'product', component: ProductComponent, children: [
       { path: 'laptop', component: LaptopComponent },
@@ -45,7 +46,8 @@ const appRoutes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(appRoutes, {
-    preloadingStrategy: PreloadAllModules
+    //preloadingStrategy: PreloadAllModules
+    preloadingStrategy: CustomPreloadingService
   })],
   exports: [RouterModule]
 })
