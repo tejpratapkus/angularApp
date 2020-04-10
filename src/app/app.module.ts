@@ -23,7 +23,6 @@ import { HomeComponent } from './home/home.component';
 import { BlogComponent } from './blog/blog.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CarrierComponent } from './carrier/carrier.component';
-import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProductComponent } from './product/product.component';
@@ -45,34 +44,6 @@ import { UxPipesPipe } from './appPipes/ux-pipes.pipe';
 import { FilterPipesPipe } from './appPipes/filter-pipes.pipe';
 import { TempletFormComponent } from './templet-form/templet-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component'
-
-const appRoutes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'blog', component: BlogComponent },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'carrier', component: CarrierComponent },
-  {
-    path: 'product', component: ProductComponent, children: [
-      { path: 'laptop', component: LaptopComponent },
-      { path: 'mobile', component: LaptopComponent },
-      { path: 'tv', component: LaptopComponent },
-      { path: 'camera', component: LaptopComponent }
-    ]
-  },
-  {
-    path: 'parent', component: ParentComponent, children: [
-      { path: 'laptop', component: LaptopComponent },
-      { path: 'mobile', component: LaptopComponent },
-      { path: 'tv', component: LaptopComponent },
-      { path: 'camera', component: LaptopComponent }
-    ]
-  },
-  { path: 'tempForm', component: TempletFormComponent },
-  { path: 'reactiveForm', component: ReactiveFormComponent },
-  { path: '**', component: PageNotFoundComponent },
-]
 
 @NgModule({
   declarations: [
@@ -119,7 +90,6 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     BsDatepickerModule.forRoot(),
     CollapseModule.forRoot(),
-    RouterModule.forRoot(appRoutes),
     HttpClientModule
   ],
   providers: [DesignUtilServiceService],
