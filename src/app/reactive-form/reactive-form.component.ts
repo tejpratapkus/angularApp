@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-reactive-form',
@@ -16,7 +17,7 @@ export class ReactiveFormComponent implements OnInit {
     this.myReactiveForm = new FormGroup({
       'userDetails': new FormGroup({
         'username': new FormControl(null, [Validators.required, this.nanNames.bind(this)]),
-        'email': new FormControl(null, [Validators.required, Validators.email]),
+        'email': new FormControl(null, [Validators.required, Validators.email], this.nanEmails),
       }),
       'course': new FormControl('Angular'),
       'gender': new FormControl('Male'),
@@ -45,6 +46,20 @@ export class ReactiveFormComponent implements OnInit {
       return null;
     }
 
+  }
+
+  nanEmails(control: FormControl): Promise<any> | Observable<any> {
+
+    const myResponse = new Promise<any>((resolve, reject) => {
+      setTimeout(() => {
+        if (control.value === 'tej@gmail.com') {
+          resolve({ 'emailNotAllowed': true });
+        } else {
+          resolve(null);
+        }
+      }, 1500);
+    })
+    return myResponse;
   }
 
 }
