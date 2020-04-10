@@ -21,6 +21,7 @@ const appRoutes: Routes = [
   { path: 'blog', component: BlogComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'carrier', component: CarrierComponent },
+  // { path: 'product', loadChildren: './product/product.module#ProductModule'}, after creation of product module you can configure with Lazy Loading
   {
     path: 'product', component: ProductComponent, children: [
       { path: 'laptop', component: LaptopComponent },
@@ -47,6 +48,6 @@ const appRoutes: Routes = [
   exports: [RouterModule]
 })
 
-export class AppRoutingModule { 
+export class AppRoutingModule {
 
 }
