@@ -23,10 +23,50 @@ export class ReactiveFormComponent implements OnInit {
       'gender': new FormControl('Male'),
       'skills': new FormArray([new FormControl(null, Validators.required)])
     });
+
+    //value change : to track status on every value change inside the form
+    /*this.myReactiveForm.valueChanges.subscribe(
+      (value) => console.log(value)
+    )*/
+
+    //statusChange : check all the required form
+    this.myReactiveForm.statusChanges.subscribe(
+      (status) => console.log(status)
+    )
+
+   /* setTimeout(() => {
+      this.myReactiveForm.setValue({
+        'userDetails': {
+          'username': 'Tejpratap',
+          'email': 'tejpratap@gmail.com',
+        },
+        'course': 'Angular',
+        'gender': 'Female',
+        'skills': ['Abc']
+      })
+    }, 4000);*/
+
+    setTimeout(() => {
+      this.myReactiveForm.patchValue({
+        'userDetails': {
+          'email': 'tejpratap@gmail.com'
+        }
+      })
+    }, 4000);
+
   }
 
   onSubmit() {
     console.log(this.myReactiveForm);
+    this.myReactiveForm.reset({
+      'userDetails': {
+        'username': '',
+        'email': '',
+      },
+      'course': 'Angular',
+      'gender': 'Male',
+      'skills': ['']
+    });
   }
 
   onAddSkills() {
